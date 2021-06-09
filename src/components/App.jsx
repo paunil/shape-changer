@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
 import ObjectToBeChanged from './ObjectToBeChanged.jsx'
 import ShapeOptions from './ShapeOptions.jsx'
-import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles'
 
 function App() {
 
-  const theme = responsiveFontSizes(createMuiTheme({}), {
+  // makes text color white
+  let theme = createMuiTheme({
+    palette: {
+      text: {
+        primary: "#fff"
+      }
+    }
+  })
+
+  // makes header font size responsive
+  theme = responsiveFontSizes(theme, {
     breakpoints: ["sm", "md"],
-    factor: 4,
+    factor: 10,
     variants: ["h4"]
   })
 

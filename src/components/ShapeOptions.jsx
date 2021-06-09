@@ -4,46 +4,37 @@ import Grid from '@material-ui/core/Grid'
 
 function ShapeOptions({ setSelectedOption }) {
 
+  // breaks out common denominators
+  const createButtons = (buttonNames) => {
+    return buttonNames.map((name) =>
+      <Grid item key={name} xs>
+        <Button
+          fullWidth={true}
+          onClick={() => onButtonClick(name)}
+          className="button"
+          style={{ background: "#00c2cb" }}
+        >
+          {name}
+        </Button>
+      </Grid>
+    )
+  }
+
   const onButtonClick = (option) => {
     setSelectedOption(option)
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={1}>
       <Grid
         item
         container
         wrap="nowrap"
         xs={12}
         sm={6}
+        spacing={1}
       >
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('circle')}
-            className="button"
-          >
-            Circle
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('egg')}
-            className="button"
-          >
-            Egg
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('heart')}
-            className="button"
-          >
-            Heart
-          </Button>
-        </Grid>
+        {createButtons(['circle', 'egg', 'heart'])}
       </Grid>
 
       <Grid
@@ -52,34 +43,9 @@ function ShapeOptions({ setSelectedOption }) {
         wrap="nowrap"
         xs={12}
         sm={6}
+        spacing={1}
       >
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('triangle')}
-            className="button"
-          >
-            Triangle
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('star')}
-            className="button"
-          >
-            Star
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            fullWidth={true}
-            onClick={() => onButtonClick('default')}
-            className="button"
-          >
-            Default
-          </Button>
-        </Grid>
+        {createButtons(['triangle', 'star', 'default'])}
       </Grid>
     </Grid>
   )

@@ -6,13 +6,13 @@ import { shapes } from './shapes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faEgg, faHeart, faSortUp, faStar, faSquare } from '@fortawesome/free-solid-svg-icons'
 
-
 function ObjectToBeChanged({ selectedOption }) {
 
+  // breaks out common denominators
   const generateIconStyle = (shape, multiplier) => {
     return {
       fontSize: "var(--" + shape + "-size)",
-      color: "pink",
+      color: "white",
       position: "absolute",
       top: "calc(100px - var(--" + shape + "-size) / 2)",
       left: "calc(100px - var(--" + shape + "-size) * " + multiplier + " / 2)"
@@ -22,22 +22,20 @@ function ObjectToBeChanged({ selectedOption }) {
   return (
     <Grid
       container
-      direction="column"
-      justify="center"
-      alignItems="center"
       style={{ margin: "10% 0% 4% 0%" }}
     >
 
-      <Grid item>
+      <Grid item xs={12} container justify="center" alignItems="center">
         <Typography
           variant="h4"
+          align="center"
           style={{ marginBottom: "4%" }}
         >
           Change this shape with the options below!
         </Typography>
       </Grid>
 
-      <Grid item>
+      <Grid item xs={12} container justify="center">
         <motion.div
           initial={"default"}
           animate={selectedOption}
