@@ -10,17 +10,17 @@ function App() {
 
   return (
     <Grid
-    container
-    justify="center"
+      container
+      justify="center"
     >
       <CssBaseline />
 
       <Grid item xs={12}>
-        <ObjectToBeChanged selectedOption={selectedOption}/>
+        <ObjectToBeChanged selectedOption={selectedOption} />
       </Grid>
 
-      <Grid item xs={12}>
-        <ShapeOptions setSelectedOption={setSelectedOption}/>
+      <Grid item xs={10} sm={8}>
+        <ShapeOptions setSelectedOption={setSelectedOption} />
       </Grid>
 
     </Grid>
