@@ -29,7 +29,10 @@ function ObjectToBeChanged({ selectedOption }) {
     >
 
       <Grid item>
-        <Typography>
+        <Typography
+          variant="h4"
+          style={{ marginBottom: "4%" }}
+        >
           Change this shape with the options below!
         </Typography>
       </Grid>
